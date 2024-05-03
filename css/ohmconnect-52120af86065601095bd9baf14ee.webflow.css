@@ -3,6 +3,10 @@
   --black: black;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   color: #fff;
   max-width: 1320px;
@@ -474,7 +478,7 @@
 .text-block-11 {
   font-family: Varela, sans-serif;
   font-size: 52px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 52px;
 }
 
@@ -498,6 +502,50 @@
   background-image: url('../images/chicago-vcwawc5xlwvpgbbw.jpg');
   background-position: 0 0;
   background-size: auto;
+}
+
+.text-block-12 {
+  font-size: 52px;
+  line-height: 52px;
+}
+
+.text-block-13 {
+  color: #333;
+  font-family: Varela, sans-serif;
+  font-size: 52px;
+  line-height: 52px;
+}
+
+.text-span-5, .text-span-6 {
+  color: #56a5e2;
+}
+
+.text-block-14 {
+  font-family: Varela, sans-serif;
+  font-size: 52px;
+  line-height: 52px;
+}
+
+.text-block-15 {
+  color: #333;
+  font-family: Varela, sans-serif;
+  font-size: 52px;
+  line-height: 52px;
+}
+
+.text-span-7 {
+  color: #56a5e2;
+}
+
+.text-block-16 {
+  color: #333;
+  font-family: Varela, sans-serif;
+  font-size: 52px;
+  line-height: 52px;
+}
+
+.text-span-8 {
+  color: #56a5e2;
 }
 
 @media screen and (min-width: 1920px) {
@@ -638,6 +686,11 @@
   .links {
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+
+  .text-block-12, .text-block-13, .text-block-15, .text-block-16 {
+    font-size: 38px;
+    line-height: 38px;
   }
 }
 
@@ -784,6 +837,11 @@
   .body {
     background-position: 50% 0;
   }
+
+  .text-block-12, .text-block-13, .text-block-15, .text-block-16 {
+    font-size: 28px;
+    line-height: 28px;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -824,7 +882,8 @@
   }
 
   .heading-style-xxl {
-    word-break: break-all;
+    word-break: normal;
+    overflow-wrap: normal;
     font-size: 3rem;
   }
 
@@ -866,6 +925,37 @@
   }
 
   .text-span-4 {
+    word-break: break-all;
+  }
+
+  .text-block-12 {
+    font-family: Varela, sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .text-block-13 {
+    font-size: 20px;
+    line-height: 20px;
+    text-decoration: none;
+  }
+
+  .text-block-15 {
+    max-width: none;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .text-span-7 {
+    word-break: break-all;
+  }
+
+  .text-block-16 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .text-span-8 {
     word-break: break-all;
   }
 }
