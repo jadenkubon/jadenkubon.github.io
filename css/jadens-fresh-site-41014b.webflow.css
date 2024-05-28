@@ -3678,6 +3678,17 @@ figcaption {
     padding-bottom: 20px;
   }
 
+  .text-block-6 {
+    width: 100%;
+    font-size: 26px;
+    line-height: 28px;
+  }
+
+  .div-block-19 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
   .section-insights {
     padding-left: 5rem;
   }
@@ -4125,13 +4136,18 @@ figcaption {
 
   .text-block-6 {
     overflow-wrap: normal;
-    font-size: 26px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .div-block-19 {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .text-span-14 {
-    font-size: 46px;
-    line-height: 46px;
+    font-size: 32px;
+    line-height: 32px;
   }
 
   .image-wrapper {
@@ -4173,8 +4189,8 @@ figcaption {
 
   .heading {
     text-align: center;
-    font-size: 42px;
-    line-height: 42px;
+    font-size: 32px;
+    line-height: 32px;
   }
 
   .paragraph-3 {

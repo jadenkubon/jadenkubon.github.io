@@ -33968,7 +33968,6 @@ spurious results.`);
         free: STARTER_MAX_NUM_USERS,
         static: BASIC_MAX_NUM_USERS,
         cms: BUSINESS_MAX_NUM_USERS,
-        plus: BUSINESS_MAX_NUM_USERS,
         business: BUSINESS_MAX_NUM_USERS,
         ecommerce_standard: ECOMM_STANDARD_MAX_NUM_USERS,
         ecommerce_plus: ECOMM_PLUS_MAX_NUM_USERS,
