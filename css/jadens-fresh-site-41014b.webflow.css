@@ -3294,6 +3294,7 @@ figcaption {
 
 .paragraph-3 {
   color: #fff;
+  font-size: 24px;
 }
 
 .text-span-18 {
@@ -3317,7 +3318,7 @@ figcaption {
 }
 
 .contact-list-items {
-  background-color: #474747;
+  background-color: #424242;
   border-radius: 20px;
   justify-content: space-between;
   align-items: center;
@@ -4245,6 +4246,7 @@ figcaption {
   .paragraph-3 {
     text-align: center;
     margin-bottom: 0;
+    font-size: 16px;
     line-height: 20px;
   }
 
@@ -4253,8 +4255,9 @@ figcaption {
     line-height: 24px;
   }
 
-  .image-10 {
-    max-width: 75px;
+  .image-10, .image-11, .image-12 {
+    max-width: 65px;
+    margin-left: 5px;
   }
 
   .links {
@@ -4275,6 +4278,10 @@ figcaption {
   .image-13 {
     width: 150px;
     height: 150px;
+  }
+
+  .section-3 {
+    padding-top: 70px;
   }
 }
 
