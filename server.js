@@ -1,6 +1,6 @@
 // Simple Node.js server for local testing with clean URLs
 // Run with: node server.js
-// Then visit: http://localhost:3000/recruiting/process
+// Then visit: http://localhost:3000/portfolios/process
 
 const http = require('http');
 const fs = require('fs');
@@ -42,15 +42,15 @@ const server = http.createServer((req, res) => {
     if (pathname === '/') {
         pathname = '/index.html';
     }
-    // Handle /recruiting/ - serve home.html
-    else if (pathname === '/recruiting/' || pathname === '/recruiting') {
-        pathname = '/recruiting/home.html';
+    // Handle /portfolios/ - serve home.html
+    else if (pathname === '/portfolios/' || pathname === '/portfolios') {
+        pathname = '/portfolios/home.html';
     }
-    // Handle clean URLs in recruiting folder
-    else if (pathname.startsWith('/recruiting/') && !pathname.endsWith('.html')) {
+    // Handle clean URLs in portfolios folder
+    else if (pathname.startsWith('/portfolios/') && !pathname.endsWith('.html')) {
         const file = pathname.split('/').pop();
         if (file) {
-            pathname = `/recruiting/${file}.html`;
+            pathname = `/portfolios/${file}.html`;
         }
     }
     // Add .html extension if file doesn't exist and no extension is present
@@ -83,6 +83,6 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}/`);
-    console.log(`Test clean URLs like: http://localhost:${PORT}/recruiting/process`);
+    console.log(`Test clean URLs like: http://localhost:${PORT}/portfolios/process`);
 });
 
