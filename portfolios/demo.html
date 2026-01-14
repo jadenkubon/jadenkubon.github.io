@@ -256,6 +256,8 @@
         let sections = ['hero', 'stats', 'academics', 'highlights', 'appraisals'];
         let isCustomizeMode = false;
         let draggedItem = null;
+        let touchStartY = null;
+        let touchStartElement = null;
 
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -406,6 +408,76 @@
             renderPortfolio();
         }
 
+        // Touch event handlers for mobile
+        let touchDragElement = null;
+        let touchDragOffset = { x: 0, y: 0 };
+        
+        function handleTouchStart(e, id) {
+            if (!isCustomizeMode) return;
+            const touch = e.touches[0];
+            const element = e.currentTarget;
+            const rect = element.getBoundingClientRect();
+            
+            touchStartY = touch.clientY;
+            touchStartElement = id;
+            draggedItem = id;
+            touchDragElement = element;
+            touchDragOffset.x = touch.clientX - rect.left;
+            touchDragOffset.y = touch.clientY - rect.top;
+            
+            element.style.opacity = '0.7';
+            element.style.transform = 'scale(0.98)';
+            element.style.zIndex = '1000';
+        }
+
+        function handleTouchMove(e) {
+            if (!isCustomizeMode || !touchDragElement || !touchStartY) return;
+            e.preventDefault();
+            
+            const touch = e.touches[0];
+            const container = document.getElementById('portfolio-container');
+            const allSections = container.querySelectorAll('[data-section-id]');
+            
+            // Find which section the touch is currently over
+            let targetSection = null;
+            allSections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (touch.clientY >= rect.top && touch.clientY <= rect.bottom &&
+                    touch.clientX >= rect.left && touch.clientX <= rect.right) {
+                    targetSection = section.getAttribute('data-section-id');
+                }
+            });
+            
+            // If over a different section, swap positions
+            if (targetSection && targetSection !== draggedItem) {
+                const newSections = [...sections];
+                const draggedIdx = newSections.indexOf(draggedItem);
+                const targetIdx = newSections.indexOf(targetSection);
+                
+                if (draggedIdx !== -1 && targetIdx !== -1 && draggedIdx !== targetIdx) {
+                    newSections.splice(draggedIdx, 1);
+                    newSections.splice(targetIdx, 0, draggedItem);
+                    sections = newSections;
+                    renderPortfolio();
+                    // Reset touch state after re-render
+                    touchStartY = touch.clientY;
+                }
+            }
+        }
+
+        function handleTouchEnd(e) {
+            if (!isCustomizeMode) return;
+            if (touchDragElement) {
+                touchDragElement.style.opacity = '1';
+                touchDragElement.style.transform = '';
+                touchDragElement.style.zIndex = '';
+            }
+            touchStartY = null;
+            touchStartElement = null;
+            draggedItem = null;
+            touchDragElement = null;
+        }
+
         // Render portfolio sections
         function renderPortfolio() {
             const container = document.getElementById('portfolio-container');
@@ -417,14 +489,17 @@
                 return `
                     <div 
                         class="relative transition-all ${dragClass}"
+                        data-section-id="${sectionId}"
                         draggable="${isCustomizeMode}"
                         ondragstart="handleDragStart(event, '${sectionId}')"
                         ondragover="handleDragOver(event)"
                         ondrop="handleDrop(event, '${sectionId}')"
+                        ${isCustomizeMode ? `ontouchstart="handleTouchStart(event, '${sectionId}')" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)"` : ''}
                     >
                         ${isCustomizeMode ? `
-                            <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-amber-500 text-white px-2 py-1 rounded text-[10px] font-bold z-10">
-                                <i class="fa-solid fa-up-down-left-right mr-1"></i> DRAG TO MOVE
+                            <div class="absolute top-3 left-3 bg-amber-500 text-white px-3 py-2 rounded-lg shadow-lg z-20 flex items-center gap-2 cursor-grab active:cursor-grabbing touch-none">
+                                <i class="fa-solid fa-grip-vertical text-sm"></i>
+                                <span class="text-xs font-bold">DRAG</span>
                             </div>
                         ` : ''}
                         ${sectionHtml}
@@ -581,10 +656,19 @@
         renderPortfolio();
         updateThemeColorButtons();
 
-        // Make functions global for inline event handlers
+        // Make functions and variables global for inline event handlers
         window.handleDragStart = handleDragStart;
         window.handleDragOver = handleDragOver;
         window.handleDrop = handleDrop;
+        window.handleTouchStart = handleTouchStart;
+        window.handleTouchMove = handleTouchMove;
+        window.handleTouchEnd = handleTouchEnd;
+        
+        // Make sections accessible globally
+        Object.defineProperty(window, 'sections', {
+            get: () => sections,
+            set: (val) => { sections = val; }
+        });
     </script>
 </body>
 </html>

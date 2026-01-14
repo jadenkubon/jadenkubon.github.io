@@ -98,10 +98,10 @@
 
     <div class="overflow-x-hidden">
         <!-- Hero Section -->
-        <section class="relative min-h-[85vh] flex items-center pt-20 pb-12 bg-slate-900 text-white overflow-hidden">
+        <section class="relative min-h-[75vh] md:min-h-[85vh] flex items-center pt-16 pb-8 md:pt-20 md:pb-12 bg-slate-900 text-white overflow-hidden">
             <div class="absolute inset-0 z-0 opacity-40">
                 <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2000&auto=format&fit=crop"
-                    class="w-full h-full object-cover" alt="Sports background" />
+                    class="w-full h-full object-cover object-right object-bottom lg:object-left" alt="Sports background" />
                 <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
             </div>
 
@@ -128,7 +128,7 @@
             </div>
 
             <!-- Floating Mockup Preview -->
-            <div class="hidden lg:block absolute right-[-2%] top-1/2 -translate-y-1/4 w-1/4 rotate-[-5deg]">
+            <div class="hidden lg:block absolute left-[-2%] top-1/2 -translate-y-1/4 w-1/4 rotate-[5deg]">
                 <div class="bg-slate-800 p-2 rounded-2xl shadow-2xl border border-slate-700">
                     <img src="../images/johnlemonspage.png" class="rounded-xl w-full h-auto grayscale-[20%]"
                         alt="Profile mockup" />
@@ -137,71 +137,190 @@
         </section>
 
         <!-- "What You Get" Grid -->
-        <section class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-anton mb-4">Everything Coaches Need</h2>
-                    <div class="w-24 h-2 bg-amber-500 mx-auto"></div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div
-                        class="p-8 bg-amber-50 rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all border-2 border-amber-200">
-                        <div class="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-magnifying-glass text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Google Search Ready</h3>
-                        <p class="text-slate-600 leading-relaxed">Search a student's name on Google and their portfolio
-                            appears. Built with SEO optimization so coaches find you instantly.</p>
-                    </div>
-
-                    <div class="p-8 bg-slate-50 rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all">
-                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-user-astronaut text-amber-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Athlete Overview</h3>
-                        <p class="text-slate-600 leading-relaxed">Identity, contact info, sport basics, and bio at a
-                            glance.</p>
-                    </div>
-
-                    <div class="p-8 bg-slate-50 rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all">
-                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-graduation-cap text-amber-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Academics & Character</h3>
-                        <p class="text-slate-600 leading-relaxed">GPA, honors, leadership roles, and community impact.
-                        </p>
-                    </div>
-
-                    <div class="p-8 bg-slate-50 rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all">
-                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-chart-line text-amber-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Performance Stats</h3>
-                        <p class="text-slate-600 leading-relaxed">Verified MaxPreps/Hudl stats, or can be provided by
-                            you.</p>
-                    </div>
-
-                    <div class="p-8 bg-slate-50 rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all">
-                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-video text-amber-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Highlights & Media</h3>
-                        <p class="text-slate-600 leading-relaxed">Embedded game film, reels, and high-res action photos.
-                        </p>
-                    </div>
-
-                    <div class="p-8 bg-slate-50 rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all">
-                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-trophy text-amber-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Awards & Recognition</h3>
-                        <p class="text-slate-600 leading-relaxed">All-region awards, MVP honors, tournament wins, and
-                            verified coach endorsements.</p>
-                    </div>
-                </div>
+        <!-- "What You Get" Grid (UPDATED) -->
+<section class="relative py-16 bg-white overflow-hidden">
+    <!-- Subtle background accents -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-amber-100/60 blur-3xl"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-slate-100 blur-3xl"></div>
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+    </div>
+  
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <h2 class="text-4xl md:text-5xl font-anton mb-4">Everything Coaches Need</h2>
+        <span class="block w-48 h-2 rounded-full bg-amber-500 mx-auto"></span>
+      </div>
+  
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div
+          class="group relative p-8 rounded-2xl bg-white border border-amber-200/70 shadow-lg shadow-amber-500/5
+                 hover:shadow-2xl hover:shadow-amber-500/10 hover:-translate-y-1 transition-all overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-amber-50 via-white to-white opacity-100"></div>
+          <div class="absolute -right-10 -top-10 w-32 h-32 rounded-full bg-amber-200/40 blur-2xl"></div>
+  
+          <div class="relative">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center shadow-lg shadow-amber-500/30
+                       group-hover:scale-105 transition-transform"
+              >
+                <i class="fa-solid fa-magnifying-glass text-white text-xl"></i>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-amber-700 bg-amber-100/70 px-3 py-1 rounded-full">
+                Visibility
+              </span>
             </div>
-        </section>
+  
+            <h3 class="text-xl font-bold mb-3 text-slate-900">Google Search Ready</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Search a student's name on Google and their portfolio appears. Built with SEO optimization so coaches find you instantly.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Card 2 -->
+        <div
+          class="group relative p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-900/5
+                 hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+          <div class="absolute -left-10 -bottom-10 w-36 h-36 rounded-full bg-amber-200/30 blur-2xl"></div>
+  
+          <div class="relative">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center ring-1 ring-amber-200
+                       group-hover:scale-105 transition-transform"
+              >
+                <i class="fa-solid fa-user-astronaut text-amber-600 text-xl"></i>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                Snapshot
+              </span>
+            </div>
+  
+            <h3 class="text-xl font-bold mb-3 text-slate-900">Athlete Overview</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Identity, contact info, sport basics, and bio at a glance.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Card 3 -->
+        <div
+          class="group relative p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-900/5
+                 hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+  
+          <div class="relative">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center ring-1 ring-amber-200
+                       group-hover:scale-105 transition-transform"
+              >
+                <i class="fa-solid fa-graduation-cap text-amber-600 text-xl"></i>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                Credibility
+              </span>
+            </div>
+  
+            <h3 class="text-xl font-bold mb-3 text-slate-900">Academics &amp; Character</h3>
+            <p class="text-slate-600 leading-relaxed">
+              GPA, honors, leadership roles, and community impact.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Card 4 -->
+        <div
+          class="group relative p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-900/5
+                 hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+  
+          <div class="relative">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center ring-1 ring-amber-200
+                       group-hover:scale-105 transition-transform"
+              >
+                <i class="fa-solid fa-chart-line text-amber-600 text-xl"></i>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                Proof
+              </span>
+            </div>
+  
+            <h3 class="text-xl font-bold mb-3 text-slate-900">Performance Stats</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Verified MaxPreps/Hudl stats, or can be provided by you.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Card 5 -->
+        <div
+          class="group relative p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-900/5
+                 hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+  
+          <div class="relative">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center ring-1 ring-amber-200
+                       group-hover:scale-105 transition-transform"
+              >
+                <i class="fa-solid fa-video text-amber-600 text-xl"></i>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                Media
+              </span>
+            </div>
+  
+            <h3 class="text-xl font-bold mb-3 text-slate-900">Highlights &amp; Media</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Embedded game film, reels, and high-res action photos.
+            </p>
+          </div>
+        </div>
+  
+        <!-- Card 6 -->
+        <div
+          class="group relative p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-900/5
+                 hover:shadow-2xl hover:-translate-y-1 transition-all overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-white"></div>
+  
+          <div class="relative">
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center ring-1 ring-amber-200
+                       group-hover:scale-105 transition-transform"
+              >
+                <i class="fa-solid fa-trophy text-amber-600 text-xl"></i>
+              </div>
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                Results
+              </span>
+            </div>
+  
+            <h3 class="text-xl font-bold mb-3 text-slate-900">Awards &amp; Recognition</h3>
+            <p class="text-slate-600 leading-relaxed">
+              All-region awards, MVP honors, tournament wins, and verified coach endorsements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 
         <!-- Interactive Demo Teaser -->
         <section class="py-24 bg-slate-900 text-white overflow-hidden relative">
@@ -236,7 +355,7 @@
         </section>
 
         <!-- Why it works -->
-        <section class="py-24 bg-white">
+        <section class="py-12 md:py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
                     <div>
@@ -271,7 +390,7 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="py-24 bg-amber-500">
+        <section class="py-12 md:py-24 bg-amber-500">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl md:text-6xl font-anton text-slate-900 mb-8 uppercase">Ready to stand out?</h2>
                 <div class="flex flex-col sm:flex-row justify-center gap-6">

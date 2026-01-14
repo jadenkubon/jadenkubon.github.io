@@ -74,7 +74,7 @@
           </nav>
     </header>
 
-    <div class="bg-slate-50 py-24">
+    <div class="bg-slate-50 py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h1 class="text-5xl font-anton mb-4">How It Works</h1>
@@ -82,8 +82,10 @@
           <div class="w-24 h-2 bg-amber-500 mx-auto mt-6"></div>
         </div>
 
-        <div class="relative mb-24">
-          <!-- Vertical line for mobile, horizontal for desktop (simulated) -->
+        <div class="relative mb-16">
+          <!-- Vertical line for mobile only -->
+          <div class="md:hidden absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 z-0 -translate-x-1/2"></div>
+          <!-- Horizontal line for desktop (lg and up) -->
           <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-slate-200 -translate-y-1/2 z-0"></div>
           
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10" id="steps-container">
@@ -103,7 +105,7 @@
               </a>
            </div>
 
-           <div class="pt-8">
+           <div>
               <h3 class="text-2xl font-anton mb-6 uppercase tracking-widest">Why professional portfolios?</h3>
               <div class="space-y-8" id="why-container">
                  <!-- Why items will be inserted here -->
@@ -196,10 +198,10 @@
     <script>
         // Steps data
         const steps = [
-            { step: '01', title: 'Send Info', desc: 'Provide your stats, academics, photos, and highlight links via our intake form.' },
-            { step: '02', title: 'Design Draft', desc: 'We build a mobile-first draft based on your sport and example choice.' },
-            { step: '03', title: 'Review & Edit', desc: 'Collaborate with us to refine your text, photos, and highlight timestamps.' },
-            { step: '04', title: 'Launch', desc: 'We go live with your professional link, ready to share with college coaches.' },
+            { step: '1', title: 'Send Info', desc: 'Provide your stats, academics, photos, and highlight links via our intake form.' },
+            { step: '2', title: 'Design Draft', desc: 'We build a mobile-first draft based on your sport and example choice.' },
+            { step: '3', title: 'Review & Edit', desc: 'Collaborate with us to refine your text, photos, and highlight timestamps.' },
+            { step: '4', title: 'Launch', desc: 'We go live with your professional link, ready to share with college coaches.' },
         ];
 
         // Checklist data
@@ -244,8 +246,8 @@
         function renderSteps() {
             const container = document.getElementById('steps-container');
             container.innerHTML = steps.map((s, i) => `
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-200 text-center group hover:bg-slate-900 transition-colors duration-300">
-                    <div class="w-16 h-16 bg-amber-500 text-slate-900 rounded-full flex items-center justify-center font-anton text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <div class="bg-white p-4 rounded-3xl shadow-lg border border-slate-200 text-center group hover:bg-slate-900 transition-colors duration-300">
+                    <div class="w-16 h-16 bg-amber-500 text-slate-900 rounded-full flex items-center justify-center font-anton text-3xl mx-auto mb-6 -mt-8 group-hover:scale-110 transition-transform">
                         ${s.step}
                     </div>
                     <h3 class="text-xl font-anton mb-4 group-hover:text-white">${s.title}</h3>
